@@ -7,13 +7,13 @@ void setup() {
   float aNumber = 1.1;
   float[] bunchONumbers = new float[10];
 
-  for (int i = 0; i <= bunchONumbers.length; i++) {
+  for (int i = 0; i < bunchONumbers.length; i++) {
     println(bunchONumbers[i]);
   }
   
   boolean[] bunchOBools = new boolean[10];
   
-  for (int i = 10; i < 0; i++) {
+  for (int i = 10; i < 0; i--) {
     bunchOBools[i] = true;
   }
 
