@@ -17,9 +17,9 @@ void draw() {
   ellipse(width/2, height/2, 230, 230);
   
   // these are the values that need mapping
-   seconds = map(seconds, 0, -100, 0, 6.28);
-   minutes = map(minutes, 0, -80, 0, 6.28);
-   hours = map(hours, 0, -60, 0, 6.28);
+   seconds = int(map(second(), 0, 59, 0, 360));
+   minutes = int(map(minute(), 0, 59, 0, 6.28));
+   hours = int(map(hour(), 0, 11, 0, 360));
    
   stroke(0);
   pushMatrix();
