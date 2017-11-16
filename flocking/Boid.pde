@@ -43,9 +43,9 @@ class Boid {
     PVector ali = align(boids);      // Alignment
     PVector coh = cohesion(boids);   // Cohesion
     // Arbitrarily weight these forces
-    sep.mult(1.5);
-    ali.mult(1.0);
-    coh.mult(1.0);
+    sep.mult(2.0);
+    ali.mult(0.5);
+    coh.mult(2.0);
     // Add the force vectors to acceleration
     applyForce(sep);
     applyForce(ali);
@@ -86,15 +86,16 @@ class Boid {
     float theta = velocity.heading2D() + radians(90);
     // heading2D() above is now heading() but leaving old syntax until Processing.js catches up
     
-    fill(200, 100);
-    stroke(255);
+    //fill(135, 206, 235);
+    fill(map(mouseX, 0, 1200, 0, 135), map(mouseY, 0, 800, 0, 206), 235);
+    noStroke();
     pushMatrix();
     translate(position.x, position.y);
     rotate(theta);
     beginShape(TRIANGLES);
-    vertex(0, -r*2);
-    vertex(-r, r*2);
-    vertex(r, r*2);
+    vertex(5, -r*5);
+    vertex(-r*2, r*5);
+    vertex(r*2, r*5);
     endShape();
     popMatrix();
   }
