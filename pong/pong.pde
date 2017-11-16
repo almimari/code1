@@ -27,7 +27,6 @@ void setup() {
   size(1000, 700);
   p1 = new Paddle(0);
   p2 = new Paddle(1);
-
 }
 
 void draw() {
@@ -36,15 +35,16 @@ void draw() {
 
   for (int i = 0; i < b.length; i++) {
     b[i] = new Ball();
+    b[i].checkCollisionWithPaddle(p1);
+    b[i].checkCollisionWithPaddle(p2);
+
+
+    b[i].update();
+    b[i].display();
   }
 
-  
-  b[i].checkCollisionWithPaddle(p1);
-  b[i].checkCollisionWithPaddle(p2);
 
 
-  b[i].update();
-  b[i].display();
   p1.update();
   p1.display();
   p2.update();
