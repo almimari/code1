@@ -19,13 +19,13 @@ class Water {
   // call this method to display the ball
   void display() {
     noStroke();
-    image(photo, s, s);
+    image(photo, photo.width, photo.height);
   }
 
 
   
   // call this method to set the size of the ball (instead of accessing its' fields directly)
-  void setSize(float siz) {
-    s = siz;
+  void setSize(float size) {
+    s = size;
   }
 }

@@ -1,5 +1,4 @@
-//create an array of 100 balls
-Water w;
+ Water w;
 PImage photo;
 
 void setup() {
@@ -14,10 +13,8 @@ void setup() {
 void draw() {
   background(255);
   
-  w.display;
-  
-  //for (int i = 0; i < w; i++) {
-  //  w.display; }
+  w.display();
+  w.setSize(10);
 }
 
 void keyPressed() {
