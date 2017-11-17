@@ -1,4 +1,6 @@
-int numWalkers = 3;
+//they all cluster together, I don't know why
+
+int numWalkers = 20;
 float[] x = new float[numWalkers];
 float[] y = new float[numWalkers];
 float[] r = new float[numWalkers];
@@ -12,9 +14,12 @@ void setup() {
 
   for (int i = 0; i < numWalkers; i++) {
     r[i] = random(1, 30);
-    x[i] = random(0, 50);
-    y[i] = random(0, 20);
-    c[i] = color(random(255), random(255), 155);
+    x[i] = random(-50, 50);
+    y[i] = random(-20, 20);
+    c[i] = color(random(200,255), random(140,255), 155);
+    //mapping scale
+      float sc = map(r[i], 0, 800, 0, 20);
+      scale(sc);
   }
 }
 
@@ -34,14 +39,14 @@ void draw() {
     //random walker ness
     float r = int(random(3));
 
-    if (r == 0) {
+    if (r <= 1) {
       y[i] +=3;
     } else if (r == 1) {
       x[i] -= 3;
     } else if (r == 2) {
       y[i] -= 3;
     } else if (r == 3) {
-      x[i] -= 3;
+      y[i] += 3;
     }
     popMatrix();
   }
@@ -51,7 +56,6 @@ void draw() {
   float stroke = map(0, 0, width, 0, 10);
   strokeWeight(stroke);
 
-  //mapping scale
-  float sc = map(0, 0, 800, 0, 20);
-  scale(sc);
+
+
 }

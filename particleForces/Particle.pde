@@ -39,7 +39,7 @@ class Particle {
   }
   
   void addRepel(float x, float y, float maxForce) {
-     float angle = atan2(y + pos.y, x + pos.x);
+     float angle = atan2(pos.y - y, pos.x - x);
      //not sure why the repel isn't working...
     float forceStr = maxForce / (1 + dist(pos.x, x, pos.y, y));
     PVector newForce = new PVector(cos(angle), sin(angle));
